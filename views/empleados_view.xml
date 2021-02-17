@@ -1,0 +1,119 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="videoclub_app.empleados_tree">
+      <field name="name">Empleados</field>
+      <field name="model">videoclub_app.empleados_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="telf"/>
+          <field name="email" widget="email"/>
+          <field name="encargado"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- FORM -->
+
+    <record model="ir.ui.view" id="videoclub_app.empleados_form">
+      <field name="name">Formulario de Empleados</field>
+      <field name="model">videoclub_app.empleados_model</field>
+      <field name="arch" type="xml">
+        
+        <form string="Nuevo Empleado">
+      
+          <sheet>
+            <group>
+              <group>
+                <h2 style="color:#a256a0">Datos Personales</h2>
+                <br/>
+
+                <label for="dni" class="oe_edit_only"/>
+                <h1>
+                  <field name="dni"/>
+                </h1>
+
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="telf"/>
+                <field name="email"/>
+                <field name="encargado"/>
+              </group>
+
+              <group>
+                <h2 style="color:#a256a0">Foto</h2>
+                <br></br>
+
+                <label for="foto" class="oe_edit_only"/>
+                <h2>
+                  <field name="foto" widget="image" class="oe_left oe_avatar" width="200" height="200"/>
+                </h2>
+
+                
+                
+              </group>
+            </group>
+            
+          </sheet>
+
+        </form>
+      </field>
+    </record>
+
+
+
+
+    <record model="ir.ui.view" id="videoclub_app.kanban_empleados">
+      <field name="name">Listado de Empleados</field>
+      <field name="model">videoclub_app.empleados_model</field>
+      <field name="arch" type="xml">
+     
+        <kanban class="o_res_partner_kanban">
+      
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="foto"/>
+          <field name="dni"/>
+          <field name="telf"/>
+        
+          <templates>
+            <t t-name="kanban-box">
+          
+              <div t-attf-class="oe_kanban_global_click">
+
+                <div class="o_kanban_image">
+                  <field name="foto" nolabel="1" widget="image" class="oe_right oe_avatar"/>
+                </div>
+                
+                <div class="oe_kanban_details">
+                  <strong>
+                    <field name="name" class="oe_inline"/> <field name="apellidos" class="oe_inline"/>
+                  </strong>
+                  
+                  <div t-if="record.dni.value">
+                    <t t-esc="record.dni.value"/>
+                  </div>
+                  <div t-if="record.telf.value">
+                    <t t-esc="record.telf.value"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="videoclub_app.action_window_empleados">
+      <field name="name">Empleados</field>
+      <field name="res_model">videoclub_app.empleados_model</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+  </data>
+</odoo>

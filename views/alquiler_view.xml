@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="videoclub_app.alquiler_tree">
+      <field name="name">Alquileres</field>
+      <field name="model">videoclub_app.alquiler_model</field>
+      <field name="arch" type="xml">
+        <tree decoration-muted="entregada == True">
+          
+          <field name="cliente"/>
+          <field name="pelicula" widget="many2many_tags"/>
+          <field name="fechaAlq"/>
+          <field name="entregada"/>
+          <field name="descuento" />
+          <field name="total" />
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="videoclub_app.alquiler_form">
+      <field name="name">Alquileres</field>
+      <field name="model">videoclub_app.alquiler_model</field>
+      <field name="arch" type="xml">
+        <form>
+          
+          <header>
+            <button name="peliculaEntregada" type="object" string="Entregada" class="oe_highlight" />
+          </header>
+        
+          <sheet>
+            <group>
+              <group>
+                <field name="cliente"/>
+                <field name="pelicula"/>
+                <field name="fechaAlq"/>
+                <field name="entregada"/>
+              </group>
+
+              <group>
+                <field name="base" />
+                <field name="iva" />
+                <field name="descuento" />
+                <field name="total" />
+              </group>
+            </group>
+          </sheet>
+          
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="videoclub_app.alquiler_model">
+      <field name="name">Calendario de Alquileres</field>
+      <field name="model">videoclub_app.alquiler_model</field>
+      <field name="arch" type="xml">
+     
+        <calendar date_start="fechaAlq" color="cliente" event_open_popup="True" mode="month" form_view_id="videoclub_app.alquiler_form" quick_add="False">
+          <field name="cliente"/>
+          <field name="pelicula"/>
+      
+        </calendar>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="videoclub_app.action_window_alquiler">
+      <field name="name">Alquileres</field>
+      <field name="res_model">videoclub_app.alquiler_model</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+  </data>
+</odoo>

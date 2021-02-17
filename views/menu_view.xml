@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <!-- Top menu item -->
+
+    <menuitem name="VideoClub" id="videoclub_app.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Peliculas" id="videoclub_app.menu_peliculas" parent="videoclub_app.menu_root"/>
+    <menuitem name="Listado" id="videoclub_app.menu_listado_peliculas" parent="videoclub_app.menu_peliculas"
+              action="videoclub_app.action_window_peliculas"/>
+    <menuitem name="Alquiler" id="videoclub_app.menu_listado_alquiler" parent="videoclub_app.menu_peliculas"
+              action="videoclub_app.action_window_alquiler"/>
+    <menuitem name="Venta" id="videoclub_app.menu_listado_venta" parent="videoclub_app.menu_peliculas"
+              action="videoclub_app.action_window_venta"/>
+
+
+    <menuitem name="Clientes" id="videoclub_app.menu_clientes" parent="videoclub_app.menu_root" action="videoclub_app.action_window_clientes"/>
+
+
+    <menuitem name="Empleados" id="videoclub_app.menu_empleados" parent="videoclub_app.menu_root"/>
+    <menuitem name="Trabajadores" id="videoclub_app.menu_trabajadores" parent="videoclub_app.menu_empleados"
+              action="videoclub_app.action_window_empleados"/>
+    <menuitem name="Encargados" id="videoclub_app.menu_encargados" parent="videoclub_app.menu_empleados"
+              action="videoclub_app.action_window_encargados"/>
+    
+
+  </data>
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_videoclub_app_peliculas_model,videoclub_app.peliculas_model,model_videoclub_app_peliculas_model,base.group_user,1,1,1,1
+access_videoclub_app_clientes_model,videoclub_app.clientes_model,model_videoclub_app_clientes_model,base.group_user,1,1,1,1
+access_videoclub_app_alquiler_model,videoclub_app.alquiler_model,model_videoclub_app_alquiler_model,base.group_user,1,1,1,1
+access_videoclub_app_venta_model,videoclub_app.venta_model,model_videoclub_app_venta_model,base.group_user,1,1,1,1
+access_videoclub_app_empleados_model,videoclub_app.empleados_model,model_videoclub_app_empleados_model,base.group_user,1,1,1,1
+access_videoclub_app_encargados_model,videoclub_app.encargados_model,model_videoclub_app_encargados_model,base.group_user,1,1,1,1

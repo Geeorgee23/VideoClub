@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="videoclub_app.venta_tree">
+      <field name="name">Ventas</field>
+      <field name="model">videoclub_app.venta_model</field>
+      <field name="arch" type="xml">
+        <tree>
+            
+          <field name="name" />
+          <field name="fecha" />
+          <field name="cliente" />
+          <field name="pelicula" widget="many2many_tags"/>
+          <field name="base" />
+          <field name="iva" />
+          <field name="total" />
+            
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="videoclub_app.venta_form">
+      <field name="name">Ventas</field>
+      <field name="model">videoclub_app.venta_model</field>
+      <field name="arch" type="xml">
+        <form string="Nueva Venta">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="fecha" />
+              <field name="cliente" />
+              <field name="pelicula"/>
+              <field name="base" />
+              <field name="iva" />
+              <field name="total" />
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="videoclub_app.venta_graph">
+      <field name="name">Gráfico de Ventas</field>
+      <field name="model">videoclub_app.venta_model</field>
+      <field name="arch" type="xml">
+     
+        <graph type="pie">
+          <field name="cliente"/>
+          <field name="pelicula"/>
+          <field name="fecha" type="row" interval="month"/>
+          <field name="total" type="measure"/>
+     
+        </graph>
+      </field>
+    </record> 
+
+
+    <record model="ir.ui.view" id="videoclub_app.venta_pivot">
+      <field name="name">Pivot de Ventas</field>
+      <field name="model">videoclub_app.venta_model</field>
+      <field name="arch" type="xml">
+        <pivot string="Pivot de Ventas">
+          <field name="cliente"/>
+          <field name="pelicula"/>
+          <field name="fecha" type="row" interval="month"/>
+          <field name="total" type="measure"/>
+
+        </pivot>
+      </field>
+    </record>
+
+
+  <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="videoclub_app.action_window_venta">
+        <field name="name">Venta</field>
+        <field name="res_model">videoclub_app.venta_model</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+    </record>
+  </data>
+</odoo>
