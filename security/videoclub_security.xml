@@ -1,0 +1,20 @@
+<odoo>
+    <record id="module_videoclub_category" model="ir.module.category">
+        <field name="name">VideoClub</field>
+    </record>
+    <!-- VideoClub Trabajadores -->
+    <record id="videoclub_group_trab" model="res.groups">
+        <field name="name">Trabajadores</field>
+        <field name="category_id" ref="module_videoclub_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <!-- VideoClub Encargados -->
+    <record id="videoclub_group_enc" model="res.groups">
+        <field name="name">Encargado</field>
+        <field name="category_id" ref="module_videoclub_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    
+
+</odoo>

@@ -24,6 +24,7 @@
 
     # always loaded
     'data': [
+        'security/videoclub_security.xml',
         'security/ir.model.access.csv',
         'views/peliculas_view.xml',
         'views/clientes_view.xml',
