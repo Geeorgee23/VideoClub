@@ -33,6 +33,7 @@
             <group>
               <group>
                 <field name="cliente"/>
+                <field name="empleado"/>
                 <field name="pelicula"/>
                 <field name="fechaAlq"/>
                 <field name="entregada"/>

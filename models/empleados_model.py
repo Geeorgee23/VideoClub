@@ -12,11 +12,11 @@ class empleados_model(models.Model):
     _sql_constraints = [("sql_cons_check_dni_empleados","UNIQUE(dni)","El dni del cliente ya existe!"),]
 
     foto=fields.Binary()
-    name = fields.Char(string="Nombre", help="Añade el nombre del socio",required=True)
-    apellidos = fields.Char(string="Apellidos", help="Añade los apellidos del socio",required=True)
-    dni = fields.Char(string="DNI", help="Añade el dni del socio",required=True, index=True, size=9)
-    telf= fields.Char(string="Telefono", help="Añade el telefono del socio", required=True, size=9)
-    email = fields.Char(string="email",help="Añade el email del socio")
+    name = fields.Char(string="Nombre", help="Añade el nombre del empleado",required=True)
+    apellidos = fields.Char(string="Apellidos", help="Añade los apellidos del empleado",required=True)
+    dni = fields.Char(string="DNI", help="Añade el dni del empleado",required=True, index=True, size=9)
+    telf= fields.Char(string="Telefono", help="Añade el telefono del empleado", required=True, size=9)
+    email = fields.Char(string="email",help="Añade el email del empleado")
 
     
     #sueldo

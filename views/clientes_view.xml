@@ -124,12 +124,26 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="videoclub_app.clientes_graph">
+      <field name="name">Gráfico de Alquileres</field>
+      <field name="model">videoclub_app.clientes_model</field>
+      <field name="arch" type="xml">
+     
+        <graph type="pie">
+          <field name="name" type="row" interval="month"/>
+          <field name="numAlq" type="measure"/>
+     
+        </graph>
+      </field>
+    </record> 
+
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="videoclub_app.action_window_clientes">
       <field name="name">Clientes</field>
       <field name="res_model">videoclub_app.clientes_model</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,tree,form,graph</field>
     </record>
   </data>
 </odoo>

@@ -12,12 +12,12 @@ class encargados_model(models.Model):
     _sql_constraints = [("sql_cons_check_dni_cliente","UNIQUE(dni)","El dni del cliente ya existe!"),]
 
     foto=fields.Binary()
-    name = fields.Char(string="Nombre", help="Añade el nombre del socio",required=True)
-    apellidos = fields.Char(string="Apellidos", help="Añade los apellidos del socio",required=True)
-    dni = fields.Char(string="DNI", help="Añade el dni del socio",required=True, index=True, size=9)
-    fechaNac = fields.Date(string="Fecha de Nacimiento",help="Añade la fecha de nacimiento del socio",required=True,default=lambda self: datetime.today())
-    telf= fields.Char(string="Telefono", help="Añade el telefono del socio", required=True, size=9)
-    email = fields.Char(string="email",help="Añade el email del socio",required=True)
+    name = fields.Char(string="Nombre", help="Añade el nombre del encargado",required=True)
+    apellidos = fields.Char(string="Apellidos", help="Añade los apellidos del encargado",required=True)
+    dni = fields.Char(string="DNI", help="Añade el dni del encargado",required=True, index=True, size=9)
+    fechaNac = fields.Date(string="Fecha de Nacimiento",help="Añade la fecha de nacimiento del encargado",required=True,default=lambda self: datetime.today())
+    telf= fields.Char(string="Telefono", help="Añade el telefono del encargado", required=True, size=9)
+    email = fields.Char(string="email",help="Añade el email del encargado",required=True)
 
     empleados = fields.One2many("videoclub_app.empleados_model", "encargado", string="Empleados")
 
